@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import Login from "./pages/Login";
 import TaskDetails from "./pages/TaskDetails";
 import Users from "./pages/Users";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 import Tasks from "./pages/Tasks";  
 import Trash from "./pages/Trash";
 function Layout() {
