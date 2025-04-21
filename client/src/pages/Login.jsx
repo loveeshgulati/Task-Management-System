@@ -36,72 +36,45 @@ const Login = () => {
               <span>Task Manager</span>
             </p>
 
-            <div className='cell'>
-            <div className='circle rotate-in-up-left'></div>
+        </div>
+        <div className="flex flex-col gap-y-5">
+          <Textbox
+          placeholder="email@example.com" 
+          type="email"
+          name="email"
+          label="Email Address"
+          className="w-full rounded-full"
+          register={register("email",{required: "Email Address is required!"} )}
+          error={errors.email? errors.email.message : ""}
+
+          />
+          <Textbox
+          placeholder="Your Password" 
+          type='password'
+          name='password'
+          label='Password'
+          className="w-full rounded-full"
+          register={register("password",{required: "Password is required!"} )}
+          error={errors.password? errors.password.message : ""}/>
+          <span className="text-sm text-gray-500 hover:text-blue-500 hover:underline cursor-pointer">Forget Password?</span>
+        <Button
+        type='submit'
+        label='Submit'
+        className ="w-full h-10 bg-blue-700 text-white rounded-full"
+
+        />
+        </div>
+
+      </form>
+
+
+      </div>
+
+    </div>
   </div>
-  </div>
-  </div>
-  {/* right side */}
-  <div className='w-full md:w-1/3 p-4 md:p-1 flex flex-col justify-center items-center'>
-<form onSubmit={handleSubmit(submitHabndler)}
-            className='form-container w-full md:w-[400px] flex flex-col gap-y-8 bg-white px-10 pt-14 pb-14'
+  );
 
->
-<div className=''>
-              <p className='text-blue-600 text-3xl font-bold text-center'>
-                Welcome back!
-              </p>
-              <p className='text-center text-base text-gray-700 '>
-                Keep all your credential safge.
-              </p>
-            </div>
-            <div className='flex flex-col gap-y-5'>
-              <Textbox
-                placeholder='email@example.com'
-                type='email'
-                name='email'
-                label='Email Address'
-                className='w-full rounded-full'
-                register={register("email", {
-                  required: "Email Address is required!",
-                })}
-                error={errors.email ? errors.email.message : ""}
-              />
-               <Textbox
-                placeholder='your password'
-                type='password'
-                name='password'
-                label='Password'
-                className='w-full rounded-full'
-                register={register("password", {
-                  required: "Password is required!",
-                })}
-                error={errors.password ? errors.password.message : ""}
-              />
-
-              <span className='text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer'>
-                Forget Password?
-              </span>
-
-              <Button
-                type='submit'
-                label='Submit'
-                className='w-full h-10 bg-blue-700 text-white rounded-full'
-              />
-            </div>
-
-              
-
-
-  
-</form>
-
-  </div>
-  </div>
-</div>
- )
- }
-
-
-
-export default Login;
+   
+ };
+ 
+ export default Login
